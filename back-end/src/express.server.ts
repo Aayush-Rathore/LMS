@@ -6,13 +6,11 @@ import cookieParser from "cookie-parser";
 class InitServer {
   // Private data members
   private app: Application;
-  private port: number;
   private limiter: RateLimitRequestHandler;
 
   //   Initilizing constructor
-  constructor(port?: number) {
+  constructor() {
     this.app = express();
-    this.port = port || 3000;
     this.limiter = rateLimit({
       windowMs: 15 * 60 * 1000,
       limit: 100,
@@ -24,7 +22,7 @@ class InitServer {
   }
 
   //  Middlewares
-  useMiddleware() {
+  private useMiddleware() {
     // Request Logger
     this.app.use((req: Request, res: Response, next: NextFunction) => {
       console.log(`${req.method} ${req.originalUrl}`);
@@ -65,9 +63,9 @@ class InitServer {
   }
 
   //   Express listner
-  startServer() {
-    this.app.listen(this.port, () => {
-      console.log(`Server is running on port ${this.port}`);
+  public startServer(port?: number) {
+    this.app.listen(port || 3000, () => {
+      console.log(`Server is running on port ${port}`);
     });
   }
 }
