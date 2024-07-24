@@ -1,12 +1,4 @@
-import express, { Request, Response } from "express";
+import InitServer from "./express.server";
 
-const app = express();
-const port = process.env.PORT || 3000;
-
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello, TypeScript with Express!");
-});
-
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
+const initServer = new InitServer(process.env.PORT);
+initServer.startServer();

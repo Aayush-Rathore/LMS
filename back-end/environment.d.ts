@@ -4,6 +4,12 @@ declare global {
       PORT: number;
     }
   }
+
+  namespace Express {
+    interface Request {
+      user?: any;
+    }
+  }
 }
 
 export {};
