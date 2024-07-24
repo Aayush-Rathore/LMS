@@ -1,4 +1,4 @@
-function Default Header()
+function DefaultHeader()
 {
     return(
         <>
@@ -6,3 +6,5 @@ function Default Header()
         </>
     )
 }
+
+export default DefaultHeader;
