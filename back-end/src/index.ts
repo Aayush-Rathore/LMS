@@ -1,12 +1,14 @@
-import express, { Request, Response } from "express";
+import ConnectDB from "./database/db.connection";
+import ExpressServer from "./express.server";
 
-const app = express();
-const port = process.env.PORT || 3000;
-
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello, TypeScript with Express!");
-});
-
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
+const initServer = new ExpressServer();
+(async () => {
+  try {
+    const dbStatus: boolean = await ConnectDB();
+    !dbStatus && process.exit(1);
+    initServer.startServer(8000);
+  } catch (error) {
+    console.log(error);
+    process.exit(1);
+  }
+})();
