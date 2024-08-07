@@ -1,17 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-//import './App.css'
-import DefaultHeader from './Components/DefaultHeader'
+// import { useState } from 'react'
+// import DefaultHeader from './Components/DefaultHeader'
 
-function App() {
-  const [count, setCount] = useState(0)
+// function App() {
+//   const [count, setCount] = useState(0)
 
+//   return (
+//     <>
+//       <DefaultHeader/>
+//     </>
+//   )
+// }
+
+// export default App
+
+
+export default function App() {
   return (
-    <>
-      <DefaultHeader/>
-    </>
+    <h1 className="text-3xl font-bold underline">
+      Hello world! OK
+    </h1>
   )
 }
-
-export default App
