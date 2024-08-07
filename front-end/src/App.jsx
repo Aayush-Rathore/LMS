@@ -1,23 +1,24 @@
-// import { useState } from 'react'
-// import DefaultHeader from './Components/DefaultHeader'
+//import { useState } from 'react'
+//import DefaultHeader from './Components/DefaultHeader'
 
-// function App() {
-//   const [count, setCount] = useState(0)
+import HeroSection from "./Components/HeroSection";
+import NewHeader from "./Components/NewHeader";
 
-//   return (
-//     <>
-//       <DefaultHeader/>
-//     </>
-//   )
-// }
 
-// export default App
 
+
+
+
+
+
+//const [count, setCount] = useState(0)
 
 export default function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world! OK
-    </h1>
+    <>
+     {/* <DefaultHeader/> */}
+     <NewHeader/>
+     <HeroSection className='mt-[25px] '/>
+    </>
   )
 }
