@@ -1,15 +1,8 @@
 //import { useState } from 'react'
 //import DefaultHeader from './Components/DefaultHeader'
 
-import HeroSection from "./Components/HeroSection";
 import NewHeader from "./Components/NewHeader";
-
-
-
-
-
-
-
+import Routers from "./Providers/Routers";
 
 //const [count, setCount] = useState(0)
 
@@ -17,8 +10,9 @@ export default function App() {
   return (
     <>
      {/* <DefaultHeader/> */}
-     <NewHeader/>
-     <HeroSection className='mt-[25px] '/>
+     <NewHeader />
+    <Routers/>
+     {/* <HeroSection className='mt-[25px] '/> */}
     </>
   )
 }
