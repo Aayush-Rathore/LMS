@@ -6,7 +6,6 @@ const initServer = new ExpressServer();
   try {
     const dbStatus: boolean = await ConnectDB();
     !dbStatus && process.exit(1);
-    //Why dbStatus and Process showing me an error
     initServer.startServer(8000);
   } catch (error) {
     console.log(error);

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "install:front-end": "cd front-end && npm install",
-    "install:back-end": "cd back-end && npm init",
+    "install:back-end": "cd back-end && npm install",
     "dev:front-end": "cd front-end && npm run dev",
     "dev:back-end": "cd back-end && npm run dev"
   },
