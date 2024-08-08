@@ -2,6 +2,7 @@ import express, { Application, Request, Response, NextFunction } from "express";
 import cors from "cors";
 import rateLimit, { RateLimitRequestHandler } from "express-rate-limit";
 import cookieParser from "cookie-parser";
+import authRouter from "./routers/auth.router";
 
 class InitServer {
   // Private data members
@@ -19,16 +20,11 @@ class InitServer {
       message: "Too Many Requests!",
     });
     this.useMiddleware();
+    this.useRoutes();
   }
 
   //  Middlewares
   private useMiddleware() {
-    // Request Logger
-    this.app.use((req: Request, res: Response, next: NextFunction) => {
-      console.log(`${req.method} ${req.originalUrl}`);
-      next();
-    });
-
     // Applying Limiter
     this.app.use(this.limiter);
 
@@ -60,6 +56,20 @@ class InitServer {
 
     // Cookie parser to use cookies
     this.app.use(cookieParser());
+
+    // Request Logger
+    this.app.use((req: Request, res: Response, next: NextFunction) => {
+      console.log(`${req.method} ${req.originalUrl}`);
+      next();
+    });
+  }
+
+  private useRoutes() {
+    this.app.use("/api/v1/auth", authRouter);
+
+    this.app.use((req: Request, res: Response) => {
+      res.status(404).json({ message: "Route not found" });
+    });
   }
 
   //   Express listner
