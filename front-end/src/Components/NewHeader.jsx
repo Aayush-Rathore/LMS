@@ -140,7 +140,7 @@ const navigation = {
   pages: [
     { name: 'मुख्य पृष्ठ', to: '/' },
     { name: 'ब्लॉग', to: '#' },  
-    { name: 'Contact', to: '/Contact' },  
+    { name: 'सम्पर्क', to: '/Contact' },  
   ],
 }
 
