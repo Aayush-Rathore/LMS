@@ -18,6 +18,7 @@ import {
   TabPanels,
 } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
+//import AuthPage from '../Pages/AuthPage';
 
 const navigation = {
   categories: [
@@ -137,8 +138,9 @@ const navigation = {
     },
   ],
   pages: [
-    { name: 'मुख्य पृष्ठ', to: '#' },
+    { name: 'मुख्य पृष्ठ', to: '/' },
     { name: 'ब्लॉग', to: '#' },  
+    { name: 'Contact', to: '/Contact' },  
   ],
 }
 
@@ -243,7 +245,7 @@ export default function NewHeader() {
 
             <div className="space-y-6 border-t border-gray-200 px-4 py-6">
               <div className="flow-root">
-                <Link to="#" className="-m-2 block p-2 font-medium text-gray-900">
+                <Link to='#' className="-m-2 block p-2 font-medium text-gray-900">
                 प्रवेश करें
                 </Link>
               </div>
