@@ -69,4 +69,4 @@ StudentSchema.pre("save", async function (next) {
     next();
 });
 
-export const student = model<IStudent>("users", StudentSchema);
+export const Students = model<IStudent>("users", StudentSchema);

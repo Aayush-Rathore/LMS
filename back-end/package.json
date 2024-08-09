@@ -20,7 +20,8 @@
     "mongoose": "^8.5.1",
     "tsc-watch": "^6.2.0",
     "tsconfig-paths": "^4.2.0",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "zod-validation-error": "^3.3.1"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",

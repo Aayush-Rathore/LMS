@@ -1,5 +1,5 @@
 import BaseValidations from "./base.validations";
-import { z } from 'zod'
+import { z } from "zod";
 
 class AuthValidations extends BaseValidations {
     public SignUp = z.object({
@@ -10,3 +10,5 @@ class AuthValidations extends BaseValidations {
         password: this.password,
     }).strict();
 }
+
+export default new AuthValidations();

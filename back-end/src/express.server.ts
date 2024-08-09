@@ -3,6 +3,7 @@ import cors from "cors";
 import rateLimit, { RateLimitRequestHandler } from "express-rate-limit";
 import cookieParser from "cookie-parser";
 import authRouter from "./routers/auth.router";
+import fs from "fs";
 
 class InitServer {
   // Private data members
@@ -59,7 +60,7 @@ class InitServer {
 
     // Request Logger
     this.app.use((req: Request, res: Response, next: NextFunction) => {
-      console.log(`${req.method} ${req.originalUrl}`);
+      fs.appendFileSync("./public/request.logs.txt", `${Date.now()} : ${req.method} ${req.originalUrl}\n`)
       next();
     });
   }
